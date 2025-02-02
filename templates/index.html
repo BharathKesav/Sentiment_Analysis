@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sentiment Analysis</title>
+    <style>
+      body {
+        text-align: center;
+        background-image: url(./money.jpg);
+        padding-top: 100px;
+      }
+      textarea {
+        border-radius: 7px;
+        padding: 5px;
+      }
+      .butn {
+        border-radius: 5px;
+        padding: 4px;
+        background-color: orange;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sentiment Analysis</h1>
+    <form action="/predict" method="POST">
+      <textarea
+        id="textarea"
+        name="text"
+        rows="4"
+        cols="50"
+        placeholder="Enter text here..."
+      ></textarea
+      ><br /><br />
+      <input class="butn" type="submit" value="Predict Sentiment" />
+    </form>
+    {% if prediction_text %}
+    <h2 id="print">{{ prediction_text }}</h2>
+    {% endif %}
+
+  </body>
+</html>
